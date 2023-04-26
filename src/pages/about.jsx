@@ -60,8 +60,8 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I'm Salim Tlemcani. I live in London. I'm interested in tech,
-                emerging markets, music, combat & outdoor sports and
+                I&apos;m Salim Tlemcani. I live in London. I&apos;m interested
+                in tech, emerging markets, music, combat & outdoor sports and
                 backpacking.
               </p>
               <p>
@@ -72,24 +72,25 @@ export default function About() {
               </p>
               <p>
                 80% of the unicorns are in the fintech sector, none are
-                Moroccan. There seem to be a lot of reasons that I'm trying to
-                explore at the moment through personal readings but also through
-                initiatives like Imperial College Moroccan Society and projects
-                such as{' '}
+                Moroccan. There seem to be a lot of reasons that I&apos;m trying
+                to explore at the moment through personal readings but also
+                through initiatives like Imperial College Moroccan Society and
+                projects such as{' '}
                 <b>
                   <a href="https://datamorocco.com/">the DataMorocco</a>
                 </b>{' '}
                 website: the official website of Moroccan data has less than 400
-                datasets and no API. In this project, I'm trying to change that.
+                datasets and no API. In this project, I&apos;m trying to change
+                that.
               </p>
               <p>
-                Another thing I'm currently investigating (Related to Morocco)
-                is ML methods for credit scoring in Emerging countries with a
-                focus on Morocco. Credit scoring is another potential area for
-                fintech growth in Morocco. Traditional credit scoring models in
-                the country are often based on limited information and can be
-                unreliable, which can make it difficult for many people to
-                access credit.
+                Another thing I&apos;m currently investigating (Related to
+                Morocco) is ML methods for credit scoring in Emerging countries
+                with a focus on Morocco. Credit scoring is another potential
+                area for fintech growth in Morocco. Traditional credit scoring
+                models in the country are often based on limited information and
+                can be unreliable, which can make it difficult for many people
+                to access credit.
               </p>
               <p>
                 Fintech startups can leverage alternative data sources, such as

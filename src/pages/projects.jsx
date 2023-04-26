@@ -122,10 +122,13 @@ export default function Projects() {
         title="Some academic, personal and professional projects I've worked on."
         intro="I’ve worked on tons of little projects over the years and realised it's time to catalog them. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
       >
-        {projects.map((project) => (
-          <section class="body-font border-t border-zinc-100 pb-16 pt-10 text-gray-600 dark:border-zinc-700/40">
+        {projects.map((project, idx) => (
+          <section
+            key={idx}
+            class="body-font border-t border-zinc-100 pb-16 pt-10 text-gray-600 dark:border-zinc-700/40"
+          >
             <div class="container mx-auto flex flex-col items-center px-5 py-24  md:flex-row">
-              <div class="mb-10 w-5/6 md:mb-0 md:w-1/2 lg:w-full lg:max-w-lg">
+              <div className="mb-10 w-5/6 md:mb-0 md:w-1/2 lg:w-full lg:max-w-lg">
                 <Image
                   class="aspect-square rounded-2xl bg-zinc-100 object-cover object-center"
                   alt="hero"

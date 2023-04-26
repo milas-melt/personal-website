@@ -372,7 +372,7 @@ export default function Home({ articles }) {
             Electrical and Electronics, Software and Financial Engineer
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Salim, a Financial Engineering student based in London. I'm
+            I’m Salim, a Financial Engineering student based in London. I&apos;m
             interested in the convergence of finance and technology, and how it
             can be used to solve real-world problems in emerging markets.
           </p>
