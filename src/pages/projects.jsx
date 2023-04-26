@@ -125,24 +125,24 @@ export default function Projects() {
         {projects.map((project, idx) => (
           <section
             key={idx}
-            class="body-font border-t border-zinc-100 pb-16 pt-10 text-gray-600 dark:border-zinc-700/40"
+            className="body-font border-t border-zinc-100 pb-16 pt-10 text-gray-600 dark:border-zinc-700/40"
           >
-            <div class="container mx-auto flex flex-col items-center px-5 py-24  md:flex-row">
+            <div className="container mx-auto flex flex-col items-center px-5 py-24  md:flex-row">
               <div className="mb-10 w-5/6 md:mb-0 md:w-1/2 lg:w-full lg:max-w-lg">
                 <Image
-                  class="aspect-square rounded-2xl bg-zinc-100 object-cover object-center"
+                  className="aspect-square rounded-2xl bg-zinc-100 object-cover object-center"
                   alt="hero"
                   src={project.logo}
                 />
               </div>
-              <div class="flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-16 md:text-left lg:flex-grow lg:pl-24">
-                <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+              <div className="flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-16 md:text-left lg:flex-grow lg:pl-24">
+                <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
                   {project.name}
                 </h1>
-                <p class="mb-8 mt-8 text-base text-zinc-600 dark:text-zinc-400">
+                <p className="mb-8 mt-8 text-base text-zinc-600 dark:text-zinc-400">
                   {project.description}
                 </p>
-                <div class="flex justify-center">
+                <div className="flex justify-center">
                   {project.link.href && (
                     <SocialLink
                       href={project.link.href}

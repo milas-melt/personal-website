@@ -7,15 +7,13 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+
+import image1 from '@/images/photos/image1.jpg'
+import image2 from '@/images/photos/image2.jpg'
+import image3 from '@/images/photos/image3.jpg'
+import image4 from '@/images/photos/image4.jpg'
+import image5 from '@/images/photos/image5.jpg'
+
 import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
@@ -71,9 +69,9 @@ function AcademicCapIcon(props) {
     <svg
       fill="none"
       stroke="currentColor"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
@@ -161,14 +159,12 @@ function Resume() {
     {
       univesity: 'Imperial College London - MSc',
       title: 'Risk Management & Financial Engineering',
-      logo: logoPlanetaria,
       start: '2022',
       end: '2023',
     },
     {
       univesity: 'University of Warwick - Beng',
       title: 'Electrical & Electronic Engineering',
-      logo: logoAirbnb,
       start: '2018',
       end: '2021',
     },
@@ -178,7 +174,6 @@ function Resume() {
     {
       company: 'SigTech',
       title: 'Quantitative Investment Analyst Intern',
-      logo: logoPlanetaria,
       start: '2022',
       end: {
         label: 'Present',
@@ -189,35 +184,30 @@ function Resume() {
       company:
         'Imperial College London - Artificial Intelligence Network / Imperial Business Analytics',
       title: 'Research Assistant',
-      logo: logoAirbnb,
       start: '2022',
       end: '2023',
     },
     {
       company: 'Rentoken',
       title: 'Founder - CTO',
-      logo: logoFacebook,
       start: '2022',
       end: '2023',
     },
     {
       company: 'Selina Music Production Studio',
       title: 'Sound Engineer & Pianist',
-      logo: logoStarbucks,
       start: '2021',
       end: '2021',
     },
     {
       company: 'DeepStream Technologies',
       title: 'Software Engineer',
-      logo: logoStarbucks,
       start: '2019',
       end: '2020',
     },
     {
       company: 'ALTEN',
       title: 'Intern - Software & Embedded systems',
-      logo: logoStarbucks,
       start: '2019',
       end: '2019',
     },
