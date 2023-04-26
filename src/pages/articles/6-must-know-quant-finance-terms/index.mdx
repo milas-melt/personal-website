@@ -1,0 +1,178 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import x7steps from './7-steps.png'
+
+export const meta = {
+  author: 'Salim Tlemcani',
+  date: '2021-10-27',
+  title: '6 must-know quantitative finance terms explained in 6 minutes.',
+  description:
+    'Reading quantitative finance articles can be a pain if you don’t know about the jargon. I picked six terms that confused me while reading the news and research papers because some traders use them interchangeably (which, by the way, is wrong!)',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+Reading quantitative finance articles can be a pain if you don’t know about the jargon. I picked six terms that confused me while reading the news and research papers because some traders use them interchangeably (which, by the way, is wrong!)
+
+(1)**Automated/** (2)**Algorithmic/** (3)**high-frequency/** (4)**low-latency/** (5)**ultra-high frequency/** (6)**ultra-low latency trading**.
+
+👉 Can you spot all the differences?
+
+![](https://miro.medium.com/v2/resize:fit:960/1*qbgttZRUODArWq-HHksUYA.gif)
+
+**This article is all about (i) defining and (ii) comparing the above terms.**
+
+But before we start, let’s agree on a definition of “trading”.
+
+> **Trading** is a basic economic concept involving the buying and selling of goods and services. [3].
+
+In financial markets, trading involves buying and selling securities (company shares, for instance).
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*-cHBoYm9cYJ34BiTf_993A.png)
+
+New York Stock Exchange (NYSE) trading floor, Wall St. [4]
+
+# 1. Automated trading
+
+> Automated trading systems entails all trading systems which, once set by its user, can perform automated tasks independently. Opposite: Traditional trading.
+
+Automated trading systems automate the **whole** trading strategy. On top of achieving what algo trading systems do (i.e. transaction execution automation), automated trading consists in (but is not limited to) the automation of (i) the quantitative modelling and tracking indicators to determine the beginning and end of trade and (ii) the portfolio risk monitoring [6].
+
+All the below terms are parts of automated trading systems.
+
+# 2. Algorithmic trading
+
+Let’s understand first what _algorithms_ are.
+
+![](https://miro.medium.com/v2/resize:fit:400/1*dfyjzcywmPKk8rz1PgBhQw.gif)
+
+## 2.a. Algorithms
+
+> An **Algorithm** is a finite sequence of well-defined instructions, typically used to solve a class of specific problems or to perform a computation [1].
+
+**Example of a famous algorithm**: The _Euclidean algorithm_ (to find the greatest common factor of two natural numbers)[2].
+
+## 2.b. Algorithmic trading
+
+> Also known as algo-trading or black-box trading, it consists of an algorithm that automatically executes various actions (such as buy or sell stocks) if pre defined market conditions are met.
+
+**⚠️ Algorithmic trading automates the execution of the trade only!** The algo trading strategy won’t decide for traders whether to buy or sell securities but will mitigate the costs and time it takes to execute the action decided by the trader.
+
+# 3. High-Frequency trading (aka HFT)
+
+![](https://miro.medium.com/v2/resize:fit:998/1*1ogUEdls9AsbxGQoTAR-xA.gif)
+
+HFT deals with several trading strategies involving buying and selling financial securities at maximum speed. It heavily depends on algorithmic trading to execute orders at high speed. It is sometimes considered as a subset of algorithmic trading, which in my opinion, is wrong since HFT involves automated decision-making as well as automated execution. Therefore, even though automated trading firmly depends on algorithmic trading, it is not the same [8] [9].
+
+👉 Picture this: You’re a trader.
+
+- You want to buy a share at US$10.00 at 02:00:00.00 PM from NYSE.
+- At the same time, it costs US$10.02 on LSE (London Stock Exchange).
+- 400 milliseconds later, the stock price in LSE increases by US$00.06.
+
+400 milliseconds is the time it takes for a human to blink an eye. A human won’t take advantage of such an opportunity, but an HFT system can.
+
+In fact, in 400 milliseconds, an HFT system can (i) detect an opportunity and (ii) make the most profitable action, 400 000 times.
+
+The HFT industry US market share increased drastically since the 2000s, topping 60% in 2009, before stagnating around 50% until today [7].
+
+# 4. Low-Latency trading
+
+> _Latency is “the delay before a transfer of data begins following an instruction for its transfer.” [10]_
+
+In financial markets, latency is a technical term used to describe signal speed for [trading systems](https://medium.com/@salim_tlem/low-latency-trading-systems-and-spaghetti-f504ffd7fc95) (if needed, you can find more info in my [previous article](https://medium.com/@salim_tlem/low-latency-trading-systems-and-spaghetti-f504ffd7fc95)). Concretely, latency is the amount of time the information signals travel from trading venues to processing applications, brokerage, and any other financial institutions involved in the trade.
+
+Low latency trading systems can be used both in algo and HFT because they reduce signal latency, which is beneficial for both types of automated trading.
+
+<Image src={x7steps} alt="" />
+
+Latency from event to execution
+
+**Example** (with arbitrary values):
+
+- Stock AAPL (Apple stock) goes up, but you don’t know it yet because it is not displayed on your computer.
+- **10 μs** (microseconds) later, your trading bot flags the change.
+- **30 μs** later, the bot processes the signal and decides to buy the stock → it sent a message signal “Buy 100 shares of AAPL” to let the venue know it would buy the stock. [11]
+- **13** **μs** later, the signal has arrived and has been processed by the trading venue.
+- **Latency =10μs + 30μs + 13μs = 52μs**
+
+The above time delays include processing time, light propagation time and modulation/demodulation time (telecommunication and computer networking time delays).
+
+# 5. Ultra-Low Latency trading
+
+Ultra-low latency trading is just an upgraded version of low-latency trading systems. At the moment, systems with a latency below 1ms are considered ultra-low latency. However, the definition is subjective, and the value of 1 ms might decrease with time. [12]
+
+# 6. Ultra-high frequency trading
+
+According to Shobhit Seth, “ultra-high-frequency traders pay for access to an exchange that shows price quotes a bit earlier than the rest of the market. This extra time advantage leads the other market participants to operate at a disadvantage” [13]. I couldn’t find more information about the subject, please let me know if you have any. :)
+
+# Key takeaways
+
+- Automated trading englobes HFT, algo, low & ultra-low latency trading.
+- Although HFT and algo are different, HFT strongly depends on algo trading.
+- Ultra-low latency is nothing more than low-latency upgraded.
+- Ultra-high frequency traders pay for access to a special stock exchange. Do you think it is fair? I’m open to discussing this in the comments.
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*PC21XcBU8-Teue4Ac3bYhw.png)
+
+Summary schema
+
+[In my previous article](https://medium.com/@salim_tlem/low-latency-trading-systems-and-spaghetti-f504ffd7fc95), I explained what [trading systems](https://medium.com/@salim_tlem/low-latency-trading-systems-and-spaghetti-f504ffd7fc95) are. Now that we know the types of trading used in a trading system, **it is time to create our first trading strategy!** In my next article, **I will code a trading strategy** with python, test it, and see if it is profitable. See you in two weeks!
+
+Liked what you read? **I try to understand quantitative finance and explain my findings intelligibly.**
+
+Feel free to like, comment and share if you like what I do. It means a lot to me.
+
+# What should I write next?
+
+**Feel free to let me know in the comment section.**
+
+Here are suggestions of related blog ideas:
+
+- Breakout strategy.
+- Smart Beta and Portfolio Optimisation.
+- Alpha Research and Factor Modelling.
+- NLP on Financial Statements.
+- Sentiment Analysis with Neural Networks.
+- Signal combination for enhanced alpha.
+- Backtesting (for an AI quant trading project).
+- More quant finance jargon.
+- Quantum finance.
+- Solving optimisation problems using genetic algorithms (potentially using Matlab genetic algorithm toolbox).
+- Explanation of research papers about EEE behind quantitative finance.
+- A quantitative research study of a real trading system using Reverse Engineering techniques.
+- An Electrical & Electronic Hardware research study behind trading systems.
+- Order Router designs and processes (for computer programming purposes, not necessarily finance) and/or SORs.
+- ASIC applied to Blockchain Mining research study.
+- EEE behind blockchain.
+- Python projects.
+- C++ projects.
+- Any other suggestions?
+
+# References
+
+[1] Math Vault, “The Definitive Glossary of Higher Mathematical Jargon,” [Online]. Available: [https://mathvault.ca/math-glossary/#algo](https://mathvault.ca/math-glossary/#algo.) [Accessed 14 Oct 2021].
+
+[2] Merriam-Webster Online Dictionary, “https://www.merriam-webster.com/," [Online]. Available: [https://www.merriam-webster.com/dictionary/algorithm](https://www.merriam-webster.com/dictionary/algorithm.) [Accessed 14 Oct 2021].
+
+[3] A. HAYES, “investopedia.com,” 10 Aug 2021. [Online]. Available: [https://www.investopedia.com/terms/t/trade.asp](https://www.investopedia.com/terms/t/trade.asp.) [Accessed 25 Oct 2021].
+
+[4] M. Nikolova, “fxnewsgroup.com,” 22 Jan 2021. [Online]. Available: [https://fxnewsgroup.com/forex-news/exchanges/nyse-trading-floor-set-to-open-to-dmms-on-jan-25-2021/](https://fxnewsgroup.com/forex-news/exchanges/nyse-trading-floor-set-to-open-to-dmms-on-jan-25-2021/) [Accessed 21 Oct 2021].
+
+[5] Optiver, “optiver.com,” [Online]. Available: [https://readytradergo.optiver.com/how-to-play/](https://readytradergo.optiver.com/how-to-play/) [Accessed 23 Oct 2021].
+
+[6] Skrimon, “datasciencesociety.net,” 18 Aug 2019. [Online]. Available: [https://www.datasciencesociety.net/what-is-the-difference-between-algorithmic-trading-and-automated-trading/](https://www.datasciencesociety.net/what-is-the-difference-between-algorithmic-trading-and-automated-trading/) [Accessed 20 Oct 2021].
+
+[7] [Working papers series — Competition among high-frequency traders, and market quality](https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2290~b5fec3a181.en.pdf), by Johannes Breckenfelder. [Accessed 11 Oct 2021].
+
+[8] E. Soltas, “vox.com,” 15 Apr 2014. [Online]. Available: [https://www.vox.com/2014/4/15/5616574/high-frequency-trading-guide-real-problems-explained](https://www.vox.com/2014/4/15/5616574/high-frequency-trading-guide-real-problems-explained.) [Accessed 26 Oct 2021].
+
+[9] T. parker, “investopedia.com,” 02 Jun 2021. [Online]. Available: [https://www.investopedia.com/financial-edge/0113/has-high-frequency-trading-ruined-the-stock-market-for-the-rest-of-us.aspx](https://www.investopedia.com/financial-edge/0113/has-high-frequency-trading-ruined-the-stock-market-for-the-rest-of-us.aspx.) [Accessed 26 Oct 2021].
+
+[10] S. Tlemcani, “medium.com/@salim_tlem,” 12 Oct 2021. [Online]. Available: [https://medium.com/@salim_tlem/low-latency-trading-systems-and-spaghetti-f504ffd7fc95](https://medium.com/@salim_tlem/low-latency-trading-systems-and-spaghetti-f504ffd7fc95.) [Accessed 22 Oct 2021].
+
+[11] G. Laughlin, A. Aguirre and J. Grundfest, “Information Transmission Between Financial Markets in Chicago and New York,” _The Financial Review,_ vol. 49, no. 2, pp. 283–312, 2014.
+
+[12] “informatica.com,” [Online]. Available: [https://www.informatica.com/gb/services-and-training/glossary-of-terms/ultra-low-latency-definition.html](https://www.informatica.com/gb/services-and-training/glossary-of-terms/ultra-low-latency-definition.html.) [Accessed 27 Oct 2021].
+
+[13] S. Seth, “investopedia.com,” 1 Jun 2020. [Online]. Available: [https://www.investopedia.com/articles/active-trading/081215/new-alternatives-highfrequency-trading.asp](https://www.investopedia.com/articles/active-trading/081215/new-alternatives-highfrequency-trading.asp) [Accessed 27 Oct 2021].

@@ -1,0 +1,196 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import orderRouter from './order-router.png'
+import latencyMPS from './latency-mps.png'
+
+export const meta = {
+  author: 'Salim Tlemcani',
+  date: '2021-10-12',
+  title: 'Low-latency trading systems and … spaghetti?',
+  description:
+    'Trading systems seemed so complex to understand to me. Why? Because they actually ARE complex, but also because they are constantly evolving and using cutting-edge technologies. These systems have become a **crucial** tool in financial institutions, holding roughly 50% of trading volume in U.S. equity markets.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+# Low-latency trading systems and … spaghetti?
+
+Trading systems seemed so complex to understand to me. Why? Because they actually ARE complex, but also because they are constantly evolving and using cutting-edge technologies. These systems have become a **crucial** tool in financial institutions, holding roughly 50% of trading volume in U.S. equity markets.
+
+## What the hell is low-latency trading? (don’t worry, this article’s title will make sense soon)
+
+At the end of this 7-min read, you’ll have a general understanding of the technical side of trading systems. No engineering or finance experience is required.
+
+To do so, let’s answer the following questions:
+
+1.  What are low-latency trading systems?
+2.  What are the main challenges of these systems?
+
+# 1. Low latency trading systems
+
+## 1.a. General view of a trading system
+
+Trading systems are vast and cumbersome. Consequently, it is of note to agree on a definition.
+
+![](https://miro.medium.com/v2/1*AWXrH2XzU7VJ8AWtvBwG-g.png)
+
+Fig.1. General view of Trading Systems
+
+Simply put, a **trading system** processes **market data** to automatically return an **optimal order** (or a set of instructions) routed to an appropriate **trading venue.**
+
+The **algo engine** finds the optimal order while the **smart order router** finds the relevant trading venue.
+
+_NB: What is an optimal order or an appropriate trading venue will depend on the criteria set by the trading system user and market regulators._
+
+> **Market data** is any piece of data (such as price) of a given financial instrument (a monetary contract between parties) reported by a trading venue (such as a stock market).
+
+Where a **trading venue**, also known as an exchange, bourse or trading exchange, is:
+
+> “An organized market where tradable securities, commodities, foreign exchange, futures, and options contracts are bought and sold”¹.
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*9DBm-NgCRtOd_fLvj4lDGA.png)
+
+Fig.2. Example of market data (Google screenshot of S&P 500 Market Summary, 11/10/2021)
+
+> The **algo engine** is the decision maker: it consists of an algorithm that reacts automatically to trends found by processing the input market data. It returns an order (such as “buy 100 shares of company XYZ”).
+
+But there are many trading venues. Which one is the most profitable?
+
+> The **Smart Order Router** executes. It automatically finds the most profitable trading venue for the order returned by the algo engine.
+
+## 1.b. The complexity of trading systems, an analogy of biological systems
+
+Sticking to such a definition would highly underrepresent what trading systems are. In fact, according to [Kevin A. Goldstein R.](https://www.linkedin.com/in/kevin-goldstein-38a3213/) (+18 years on Wall St.) from [Neeve Research](https://www.neeveresearch.com/)[2],
+
+> “A trading system is a complex ecosystem of components all working in concert towards a singular goal.”
+>
+> — Kevin A. Goldstein R.
+
+But Kevin Goldstein doesn’t stop here; he continues by comparing trading systems with biological or even organic systems. Surprisingly, this comparison seems to be the most appropriate definition of trading systems.
+
+In [_Trading Systems and Methods_](https://www.wiley.com/en-us/Trading+Systems+and+Methods%2C+6th+Edition-p-9781119605355) by [Perry J. Kaufman](https://www.wiley.com/en-us/search?pq=%7Crelevance%7Cauthor%3APerry+J.+Kaufman), trading systems are introduced with a quote from Charles Darwin (where “species” represent trading systems).
+
+> “It is not the strongest of the species that survive, nor the most intelligent, but the ones most responsive to change”
+>
+> — Charles Darwin
+
+This comparison is so accurate that, like biological systems, trading systems experience mutations and evolutions. That is why pieces of software programmed to do one task end up doing a different one in trading systems. Furthermore, genetic algorithms have been used in heuristic algorithms, resulting in successful operations in securities trading.
+
+> A **heuristic algorithm**_[3]_ is (in contrast with traditional algorithms) optimised for maximum speed at the expense of optimality, accuracy, precision, or completeness.
+>
+> A **genetic algorithm**_[4]_ is based on a natural selection process that mimics biological evolution to solve categorised and uncategorised optimisation problems (non-biological problems inlcuded).
+
+## 1.c. The common behaviour of trading systems, an example of a Basic Order Manager
+
+<Image src={orderRouter} alt="" />
+
+Fig.3. A common behaviour of trading systems with an Order Router
+
+- **Client-IN** represents the order requirements set by the client (client aka trading system user); it could, for instance, disable undesired trading venues like dark pools.
+- **Client-OUT** is customisable; it could represent information about the trades, i.e. live trade tracking system or console;
+- **Market-IN** represents the market data.
+- **Market-OUT** is a message signal representing the order; for instance, “sell a stock ABC at a price of $XYZ”.
+
+At first sight, it seems that trading systems’ common behaviour is fairly simple: it receives a message, processes it and sends back some signal.
+
+Even so, the complexity comes when one wants to execute numerous operations at speed. **High-frequency traders** can conduct trades in approximately **one 64 millionths of a second**. As a result, one must consider building an asynchronous system.
+
+> Unlike synchronous systems, **asynchronous systems** do not depend on one global clock which would output binary signals resulting in series of operations executed at the signal positive edge. Rather than being clock-edge driven, operations are executed using an event-driven architecture.
+
+What a boring definition. Let me add my sauce to it (literally).
+
+**Here’s a simple example of Synchronous vs Asynchronous systems using … spaghetti!**
+
+_👉 Picture this:_ You’re a chef cooking spaghetti. Let the **\{ingredients+chef\}** be the system.
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*AyUcaK5w2cNo4qzJCkxllg.jpeg)
+
+Fig.4. Synchronous vs Asynchronous systems
+
+In the **synchronous system**, the chef has to **wait** for the water to boil before continuing cooking. In the waiting time, there is **no output**: the system is “**on hold**”. The tasks are executed **one by one**. The output depends on a preset time (i.e. start pouring the pasta on a plate _7 minutes_ after starting boiling water.).
+
+In the **asynchronous system**, the chef can execute **different operations at the same time**. What’s more, the system sends **instant outputs** as soon as the task starts, which allows the chef to start other tasks **in parallel**.
+
+Note that synchronous systems are more graspable than asynchronous ones.
+
+**Ok, that’s cool. But what about trading systems?**
+
+_👉 Consider an asynchronous system consisting of a smart order router (aka SOR. See Fig.3)._
+
+From the **Client-IN** and **Market-IN** data inputted in the order router, some **Market-OUT** and **Client-OUT** data will be instantly outputted while receiving more input data, without waiting for the order router processes to operate. What’s more, the order router processes are complex. Fortunately, these processes can be presented as state diagrams, making SOR operations easier for humans to understand.
+
+# 2. The main challenges of trading systems
+
+Top three Requirements for trading systems, in order of importance.
+
+## I. Performance
+
+> Latency is “the delay before a transfer of data begins following an instruction for its transfer.”
+
+The lower the latency of a trading system, the better its performance. Low-latency trading systems perform at very high speed, out-racing humans by far in execution and data processing speed.
+
+In 2018, a competitive low-latency trading system would run at **5 μs** (microseconds) ingress to egress, meaning from the trading system’s data entry to the data exit point. However, because no system is perfect, the numbers were usually between **5 to 20 μs**, and that’s fine, as long as it didn’t get slower than 20 μs for low-latency systems, to stay competitive against other trading systems.
+
+Note that wire latency is not taken into account in the aforementioned numbers. Usually, data centres guarantee that all trading systems have the same wire length. That way, wire latency cannot be considered a competitive advantage in the stock market.
+
+## II. Consistency
+
+A chef must serve you a good meal whether the restaurant is busy or not. Similarly, trading systems must perform the same with 10.000 or 100.000 messages per second, with a standard deviation of only 1 μs (approximately, with 2018 standards).
+
+<Image src={latencyMPS} alt="" />
+
+Variation of latency with the volume of processed messages for a trading system
+
+## III. Reliability
+
+Trading systems cannot afford to lose orders, execution or confirmation. But no matter how hard we try, we will lose orders. And this is why reliability is not only about trying hard not to lose orders but also about saving orders. Trading Systems must be designed to survive processes and machine failure.
+
+# Conclusion
+
+In this article, it was assumed that low-latency trading systems architecture is comparable to a simple trading system and consisted of an algo engine for decision making and a smart order router for execution. In reality, low-latency trading systems are more complex.
+
+Nevertheless, the information provided is sufficient to understand the typical behaviour of low-latency trading systems.
+
+Do you know the difference between Algorithmic Trading, Automated trading, High-frequency trading, Low-latency trading & Ultra-low latency trading? It’s going to be my next blog post. See you in two weeks!
+
+Liked what you read? **I try to understand quantitative finance and explain my findings intelligibly.**
+
+# What should I write next?
+
+**Feel free to let me know in the comment section.**
+
+Here are suggestions of related blog ideas:
+
+- Simulate my trading system and explain how.
+- Quantum finance.
+- Solving optimisation problems using genetic algorithms (potentially using Matlab genetic algorithm toolbox).
+- Explanation of research papers about EEE behind quantitative finance.
+- A quantitative research study of a real trading system using Reverse Engineering techniques.
+- An Electrical & Electronic Hardware research study behind trading systems.
+- Order Router designs and processes (for computer programming purposes, not necessarily finance) and/or SORs.
+- ASIC applied to Blockchain Mining research study.
+- EEE behind blockchain.
+- More cooking stuff (yes please 😋).
+- Any other suggestions?
+
+# References and relevant resources
+
+This article has been inspired by several resources, which are listed below:
+
+[1] Neeve Research, Corporate author (2021): [https://www.neeveresearch.com/](https://www.neeveresearch.com/)
+
+[2] [Trading Systems and Method](https://www.amazon.co.uk/Trading-Systems-Methods-Wiley/dp/1119605350/ref=asc_df_1119605350/?tag=googshopuk-21&linkCode=df0&hvadid=406170683277&hvpos=&hvnetw=g&hvrand=16198497438311144046&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1006656&hvtargid=pla-834172661206&psc=1&th=1&psc=1&tag=&ref=&adgrpid=88284845402&hvpone=&hvptwo=&hvadid=406170683277&hvpos=&hvnetw=g&hvrand=16198497438311144046&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1006656&hvtargid=pla-834172661206), Fifth Edition (2013)
+
+[3] [Heuristic Algorithms](https://optimization.mccormick.northwestern.edu/index.php/Heuristic_algorithms#:~:text=A%20heuristic%20algorithm%20is%20one,a%20class%20of%20decision%20problems), Article written by Vincent Kenny, Matthew Nathal, and Spencer Saldana, from Northwestern’s McCormick School of Engineering (May 25, 2014)
+
+[4] [Textile Fibre Composites in Civil Engineering](https://www.sciencedirect.com/science/article/pii/B9781782424468000124), by C.G.Papanicolaou & I.C.Papantoniou (2016)
+
+- [What Is High-Frequency Trading?](https://smartasset.com/investing/high-frequency-trading) from [https://smartasset.com](https://smartasset.com/)
+- [Trading system state diagram](https://velocimetrics.com/clients/reducing-equities-trading-losses/), Corporate author — Beeks formerly Velocimetrics.
+- P. G. a. K. Zimmermann, Algorithmic Trading in Practice, Oxford, Feb 2018.
+- r. N. R. Kevin A. Goldstein R., “the In-memory computing summit,” in _In-Memory Techniques, Low-Latency Trading_, Oct 2018.
+- S. Seth, “Investopedia,” Investopedia, 05 May 2021. [Online]. Available: [https://www.investopedia.com/articles/active-trading/101014/basics-algorithmic-trading-concepts-and-examples.asp](https://www.investopedia.com/articles/active-trading/101014/basics-algorithmic-trading-concepts-and-examples.asp.) [Accessed Oct 2021].
+- J. Patterson, “financemagnates,” financemagnates, 18 09 2015. [Online]. Available: [https://www.financemagnates.com/executives/insights/what-does-a-trading-system-mean/](https://www.financemagnates.com/executives/insights/what-does-a-trading-system-mean/) [Accessed Oct 2021].
+- Wikipedia, 16 12 2020. [Online]. Available: [https://en.wikipedia.org/wiki/Smart_order_routing#Algorithmic_trading_and_SOR](https://en.wikipedia.org/wiki/Smart_order_routing#Algorithmic_trading_and_SOR.) [Accessed Oct 2021].
+- Fincyclopedia, 14 July 2020. [Online]. Available: [https://fincyclopedia.net/exchanges/p/parent-order](https://fincyclopedia.net/exchanges/p/parent-order.) [Accessed Oct 2021].
+- Marketswiki., 27 May 2021. [Online]. Available: [https://marketswiki.com/wiki/Order_routing](https://marketswiki.com/wiki/Order_routing.) [Accessed Oct 2021].

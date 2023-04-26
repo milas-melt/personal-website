@@ -1,0 +1,94 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  author: 'Salim Tlemcani',
+  date: '2021-11-29',
+  title: 'Terminologies: Stocks, Options & Equity',
+  description:
+    'If you’re new to trading and try to read the news, you’ll often find articles dealing with stocks. I didn’t know that when people say stock, they usually refer to common stocks, as opposed to preferred stocks. Yes, there are two types of stocks. To understand how they differ, let’s first understand what’s a stock.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## _What’s a stock?_
+
+If you’re new to trading and try to read the news, you’ll often find articles dealing with **stocks**. I didn’t know that when people say stock, they usually refer to **common stocks**, as opposed to **preferred stocks**. Yes, there are two types of stocks. To understand how they differ, let’s first understand what’s a stock.
+
+“A stock is **a security that represents the ownership of a fraction of a corporation**.”[1] Nowadays, companies issue thousands, millions or even billions of shares (for more info read [1]).
+
+![](https://miro.medium.com/v2/resize:fit:720/1*GOLoygzYnLIqp6j86R45Ww.gif)
+
+### Right, so what’s the difference between common and preferred stocks?
+
+By owning common stocks, one can benefit from:
+
+- A portion of the company profits as **dividends** if the company distributes them.
+- The ability to **vote** on decisions related to the company (as opposed to owning a preferred stock). i.e. can vote on who should be the company’s board of directors.
+- A portion of remaining **assets** in case of **liquidation**.
+
+By owning preferred stocks, one can benefit from:
+
+- A **fixed** amount of **income** each year
+- Being **paid before common stockholders** get paid dividends
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*IFHyyjHVP_JUzwGIzvFunQ.png)
+
+fig.1. Common stocks vs Preferred stocks
+
+> “Dividends are payments a company makes to share profits with its stockholders. They’re paid on a regular basis, and they are one of the ways investors earn a return from investing in a stock.”[2]
+>
+> “Liquidation is the process of bringing a business to an end and distributing its assets to claimants”[3]
+
+Generally speaking, the main benefit of owning a stock is making money from its value fluctuations in the market. The return on the investment, in this case, is called _capital gains_.
+
+## Options
+
+> “**Options** are financial derivatives¹ that give the buyer the right to buy or sell the underlying asset² at a stated price³ within a specified period.”[4]
+>
+> ¹ Options are considered financial derivatves because their value is dependant on the price of a corresponding asset.  
+> ² The asset could be: stocks, bonds, currency, interest rates, market indices, exchange-traded funds (ETFs) or futures contracts [5]  
+> ³ The stated price is also called the _strike price_.
+
+In this article, we consider the 4 following types of options: calls, puts, American and European options.
+
+**Call** **options**: give the right to buy at the strike price.
+
+**Put** **options**: give the right to sell at a fixed price.
+
+**American options**: give the right to exercise\* the option at the strike price any time up to the expiration date.
+
+**European options**: give the right to exercise\* the option at the expiration date, but not earlier.
+
+_\* In options trading, the option holder has the right, but not the obligation to buy or sell the option, hence the name “option”. “Exercising the option” means to buy or sell the option._
+
+## Forwards and Futures
+
+For both forwards and futures contracts, a buyer and seller agree to trade assets at a strike price on a future date.
+
+On the one hand, futures are standardized contracts traded on futures exchanges. It is a contract that obligates the buyer to buy or the seller to sell an asset at a predetermined price at a specified time in the future.
+
+On the other hand, forwards are non-standardized contracts privately negotiated between the two parties. Forwards are not designed to be traded on an exchange.
+
+## Equity
+
+Public equity refers to stocks traded in a stock exchange, whereas private equity refers to shares of a company that cannot be traded on a stock market.
+
+The aim of this article is to understand basic financial concepts. **If you follow my articles, you will be able to create a trading bot using momentum trading from scratch.** I make sure to keep articles under 10 mins reading time, always using simple terms and clear illustrations.
+
+Liked what you read? **I try to understand quantitative finance and explain my findings intelligibly.**
+
+Feel free to like, comment and share if you like what I do. It means a lot to me 😁
+
+## References
+
+[1] A. Hayes and G. Scott, 22 May 2021. [Online]. Available: [https://www.investopedia.com/terms/s/stock.asp.](https://www.investopedia.com/terms/s/stock.asp.) [Accessed 26 Nov 2021].
+
+[2] A. O’Shea and T. Lam-Balfour, “www.nerdwallet.com," 26 Apr 2021. [Online]. Available: [https://www.nerdwallet.com/article/investing/what-are-dividends.](https://www.nerdwallet.com/article/investing/what-are-dividends.) [Accessed 26 Nov 2021].
+
+[3] W. Kenton and D. Kindness, “www.investopedia.com," 20 Jun 2021. [Online]. Available: [https://www.investopedia.com/terms/l/liquidation.asp.](https://www.investopedia.com/terms/l/liquidation.asp.) [Accessed 26 Nov 2021].
+
+[4] J. Chen and G. Scott, “www.investopedia.com," 08 Sept 2021. [Online]. Available: [https://www.investopedia.com/terms/o/option.asp.](https://www.investopedia.com/terms/o/option.asp.) [Accessed 27 Nov 2021].
+
+[5] RBC Direct Investing, “www6.royalbank.com,” [Online]. Available: [https://www6.royalbank.com/en/di/hubs/investing-academy/chapter/what-are-options/jv7atfyu/jv7atg0t.](https://www6.royalbank.com/en/di/hubs/investing-academy/chapter/what-are-options/jv7atfyu/jv7atg0t.) [Accessed 30 Nov 2021].
+
+[6] [Udacity Nanodegree: Artificial Intelligence for Trading](https://www.udacity.com/course/ai-for-trading--nd880)
