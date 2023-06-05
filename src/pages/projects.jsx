@@ -144,7 +144,7 @@ export default function Projects() {
       </Head>
       <SimpleLayout
         title="Some academic, personal and professional projects I've worked on."
-        intro="I’ve worked on tons of little projects over the years and realised it's time to catalog them. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+        intro="I’ve worked on tons of little projects over the years and realised it's time to catalog them. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute. Please note that I only publish projects that have been used in production."
       >
         {projects.map((project, idx) => (
           <section
