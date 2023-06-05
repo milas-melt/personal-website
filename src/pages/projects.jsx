@@ -10,11 +10,35 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import datamorocco from '@/images/photos/datamorocco.png'
 import rentoken from '@/images/photos/rentoken.png'
 import dcrowd from '@/images/photos/dcrowd.png'
+import pythonframework from '@/images/photos/pythonframework.png'
+import creditscoring from '@/images/photos/creditscoring.png'
 import ai3ddesigner from '@/images/photos/ai3ddesigner.gif'
 import multicharacterai from '@/images/photos/multicharacterai.gif'
 import selfbalancingrobot from '@/images/photos/selfbalancingrobot.gif'
 
 const projects = [
+  {
+    name: 'Credit Scoring with ML',
+    description:
+      'An interpretable Neural Network to handle credit scoring classification problems. Introduces cutting-edge ML with Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting',
+    link: {
+      href: null,
+      label: null,
+      github: 'https://github.com/milas-melt/credit_scoring_deep_learning',
+    },
+    logo: creditscoring,
+  },
+  {
+    name: 'Python Framework Backtester',
+    description:
+      'Look Back Straddle Deltas MA Cross Over strat. Breakout strat with combined signals from different breakout criteria. Returns prediction using ML for seasonality detection fed into a random forest for prediction. (unsupervised-to-supervised learning methods)',
+    link: {
+      href: null,
+      label: null,
+      github: 'https://github.com/milas-melt/backtester_framework',
+    },
+    logo: pythonframework,
+  },
   {
     name: 'DataMorocco',
     description:
