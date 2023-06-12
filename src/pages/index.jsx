@@ -163,7 +163,7 @@ function Resume() {
       end: '2023',
     },
     {
-      univesity: 'University of Warwick - Beng',
+      univesity: 'University of Warwick - BEng',
       title: 'Electrical & Electronic Engineering',
       start: '2018',
       end: '2021',
