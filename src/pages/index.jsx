@@ -200,6 +200,12 @@ function Resume() {
       end: '2021',
     },
     {
+      company: 'Webryd',
+      title: 'Founder',
+      start: '2020',
+      end: '2021',
+    },
+    {
       company: 'DeepStream Technologies',
       title: 'Software Engineer',
       start: '2019',
