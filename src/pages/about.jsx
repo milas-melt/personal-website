@@ -110,13 +110,6 @@ export default function About() {
           <div className="lg:pl-20">
             <ul role="list">
               <SocialLink
-                href="https://twitter.com/salim_tlem"
-                icon={TwitterIcon}
-              >
-                Follow on Twitter
-              </SocialLink>
-
-              <SocialLink
                 href="https://github.com/milas-melt"
                 icon={GitHubIcon}
                 className="mt-4"
