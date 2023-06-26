@@ -75,7 +75,7 @@ const projects = [
   {
     name: '3D AI Designer',
     description:
-      'Decentralized crowdfunding platform running on Polygon made in 36 hours during the Polygon x EasyA hackathon.',
+      'AI powered (DALL-E) model to generated t-shirt designs. The user can choose the design, color, and text. The AI generates the design.',
     link: {
       href: null,
       label: null,
