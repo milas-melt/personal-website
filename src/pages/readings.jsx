@@ -37,7 +37,7 @@ export default function Readings() {
       </Head>
       <SimpleLayout
         title="Things I'm reading (more on github)."
-        intro="I'll start using this page as a memo for me of interesting research papers and books that I'm currently reading or that I need to read. I'll also add some of the books that I've read in the past and that I recommend."
+        intro="I'll start using this page as a memo for me of interesting research papers and books that I`'`m currently reading or that I need to read. I`'`ll also add some of the books that I`'`ve read in the past and that I recommend."
       >
         <div className="space-y-20">
           <ReadingsSection title="Research papers - ML">
@@ -136,21 +136,21 @@ export default function Readings() {
               href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf"
               title="Sequence to Sequence Learning with Neural Networks"
             >
-              Skimmed through only. Maybe I'll get back to it later.
+              Skimmed through only. Maybe I`&apos;`ll get back to it later.
             </Reading>
 
             <Reading
               href="https://arxiv.org/abs/1502.03044"
               title="Show, Attend and Tell: Neural Image Caption Generation with Visual Attention"
             >
-              Skimmed through only. Maybe I'll get back to it later.
+              Skimmed through only. Maybe I`&apos;`ll get back to it later.
             </Reading>
 
             <Reading
               href="https://arxiv.org/abs/2010.11929"
               title="An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale"
             >
-              Skimmed through only. Maybe I'll get back to it later.
+              Skimmed through only. Maybe I`&apos;`ll get back to it later.
             </Reading>
           </ReadingsSection>
 
@@ -175,9 +175,10 @@ export default function Readings() {
           <ReadingsSection title="Books I need to read">
             <Reading
               href="https://www.amazon.co.uk/Volatility-Surface-Practitioners-Guide-Finance/dp/0471792519"
-              title="Prof. Enrico Biffis recommendation - The Volatility Surface: A Practitioner's Guide"
+              title="Prof. Enrico Biffis recommendation - The Volatility Surface: A Practitioner`'`s Guide"
             >
-              The Volatility Surface: A Practitioner's Guide, by Jim Gatheral
+              The Volatility Surface: A PractitionerReadings Guide, by Jim
+              Gatheral
             </Reading>
             <Reading
               href="https://www.amazon.co.uk/Advanced-Equity-Derivatives-Volatility-Correlation/dp/1118750969"
