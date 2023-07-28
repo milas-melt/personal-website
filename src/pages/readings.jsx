@@ -136,21 +136,21 @@ export default function Readings() {
               href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf"
               title="Sequence to Sequence Learning with Neural Networks"
             >
-              Skimmed through only. Maybe I`&apos;`ll get back to it later.
+              Skimmed through only. Maybe I&apos;ll get back to it later.
             </Reading>
 
             <Reading
               href="https://arxiv.org/abs/1502.03044"
               title="Show, Attend and Tell: Neural Image Caption Generation with Visual Attention"
             >
-              Skimmed through only. Maybe I`&apos;`ll get back to it later.
+              Skimmed through only. Maybe I&apos;ll get back to it later.
             </Reading>
 
             <Reading
               href="https://arxiv.org/abs/2010.11929"
               title="An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale"
             >
-              Skimmed through only. Maybe I`&apos;`ll get back to it later.
+              Skimmed through only. Maybe I&apos;ll get back to it later.
             </Reading>
           </ReadingsSection>
 
@@ -159,8 +159,8 @@ export default function Readings() {
               href="https://www.amazon.co.uk/Options-Futures-Other-Derivatives-United/dp/0131499084"
               title="Options, Futures and Other Derivatives"
             >
-              The "bible" in finance: Options, Futures and Other Derivatives, by
-              John C. Hull
+              The &quot;bible&quot; in finance: Options, Futures and Other
+              Derivatives, by John C. Hull
             </Reading>
             <Reading
               href="https://www.amazon.co.uk/Exotic-Options-Hybrids-Wiley-Finance/dp/0470688033"
