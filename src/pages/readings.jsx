@@ -37,7 +37,7 @@ export default function Readings() {
       </Head>
       <SimpleLayout
         title="Things I'm reading (more on github)."
-        intro="I'll start using this page as a memo for me of interesting research papers and books that I`'`m currently reading or that I need to read. I`'`ll also add some of the books that I`'`ve read in the past and that I recommend."
+        intro="I'll start using this page as a memo for me of interesting research papers and books that I'm currently reading or that I need to read. I'll also add some of the books that I've read in the past and that I recommend."
       >
         <div className="space-y-20">
           <ReadingsSection title="Research papers - ML">
