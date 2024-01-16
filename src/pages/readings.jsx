@@ -153,7 +153,28 @@ export default function Readings() {
               Skimmed through only. Maybe I&apos;ll get back to it later.
             </Reading>
           </ReadingsSection>
-
+          <ReadingsSection title="Quant Strats">
+            <Reading
+              href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2554010"
+              title="rnight Returns and Firm-Specific Investor Sentiment"
+            ></Reading>
+            {/* The Formation Process of Winners and Losers in Momentum Investing */}
+            <Reading
+              href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2610571"
+              title="The Formation Process of Winners and Losers in Momentum Investing"
+            ></Reading>
+            {/* Expected Skewness and Momentum */}
+            <Reading
+              href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2600014"
+              title="Expected Skewness and Momentum"
+            ></Reading>
+            {/* Arbitrage Asymmetry and the Idiosyncratic Volatility Puzzle */}
+            <Reading
+              href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2155491"
+              title="Arbitrage Asymmetry and the Idiosyncratic Volatility Puzzle"
+            ></Reading>
+            {/* Arbitrage Asymmetry and the Idiosyncratic Volatility Puzzle */}
+          </ReadingsSection>
           <ReadingsSection title="Books - Finance">
             <Reading
               href="https://www.amazon.co.uk/Options-Futures-Other-Derivatives-United/dp/0131499084"
