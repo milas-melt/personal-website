@@ -156,7 +156,7 @@ export default function Readings() {
           <ReadingsSection title="Quant Strats">
             <Reading
               href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2554010"
-              title="rnight Returns and Firm-Specific Investor Sentiment"
+              title="Ornight Returns and Firm-Specific Investor Sentiment"
             ></Reading>
             {/* The Formation Process of Winners and Losers in Momentum Investing */}
             <Reading
