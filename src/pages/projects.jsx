@@ -9,6 +9,7 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 
 import datamorocco from '@/images/photos/datamorocco.png'
 import rentoken from '@/images/photos/rentoken.png'
+import quantqa from '@/images/photos/quantqa.png'
 import dcrowd from '@/images/photos/dcrowd.png'
 import pythonframework from '@/images/photos/pythonframework.png'
 import creditscoring from '@/images/photos/creditscoring.png'
@@ -17,6 +18,16 @@ import multicharacterai from '@/images/photos/multicharacterai.gif'
 import selfbalancingrobot from '@/images/photos/selfbalancingrobot.gif'
 
 const projects = [
+  {
+    name: 'Quant Qa',
+    description: 'A platform to revise for quant interviews.',
+    link: {
+      href: 'https://quantqa.com',
+      label: 'quantqa.com',
+      github: null,
+    },
+    logo: quantqa,
+  },
   {
     name: 'Credit Scoring with ML',
     description:
@@ -53,10 +64,10 @@ const projects = [
   {
     name: 'Rentoken',
     description:
-      'Discovered the 1st web3 non-invasive solution to rent digital assets without collateral. Rentoken was one of the first NFT rental marketplaces. Was offered angel investment opportunities. Won a scholarship prize by Protocol labs, a blockchain R&D company known for creating IPFS and Filecoin. Note that the code is not completely open source.',
+      'Discovered the 1st web3 non-invasive solution to rent digital assets without collateral. Rentoken was one of the first NFT rental marketplaces. Was offered angel investment opportunities. Won a scholarship prize by Protocol labs, a blockchain R&D company known for creating IPFS and Filecoin. Note that the code is not completely open source.(Authentication required a wallet, but is propably not secure anymore and out of date)',
     link: {
-      href: 'https://rentoken.xyz/',
-      label: 'landing page',
+      href: 'https://eloquent-chebakia-dbfd89.netlify.app',
+      label: 'Rentoken',
       github: 'https://github.com/rentoken-xyz',
     },
     logo: rentoken,
