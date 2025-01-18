@@ -189,7 +189,7 @@ function Resume() {
     {
       company:
         'Imperial College London - Artificial Intelligence Network / Imperial Business Analytics',
-      title: 'Research Assistant',
+      title: 'Research Assistant - non-parametric statistics',
       start: '2022',
       end: '2023',
     },
