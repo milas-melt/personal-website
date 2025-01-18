@@ -206,6 +206,12 @@ function Resume() {
       end: '2021',
     },
     {
+      company: 'University of Cambridge',
+      title: 'Research assistant - photonic systems',
+      start: '2021',
+      end: '2021',
+    },
+    {
       company: 'Webryd',
       title: 'Founder',
       start: '2020',
