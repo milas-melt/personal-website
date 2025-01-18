@@ -224,6 +224,12 @@ function Resume() {
       end: '2020',
     },
     {
+      company: 'DeepStream Technologies',
+      title: 'QA-test engineer intern',
+      start: '2019',
+      end: '2019',
+    },
+    {
       company: 'ALTEN',
       title: 'Intern - Software & Embedded systems',
       start: '2019',
