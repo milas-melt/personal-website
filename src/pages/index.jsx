@@ -173,12 +173,18 @@ function Resume() {
   let resume = [
     {
       company: 'SigTech',
-      title: 'Quantitative Investment Analyst Intern',
-      start: '2022',
+      title: 'Quantitative Analyst',
+      start: '2023',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear(),
       },
+    },
+    {
+      company: 'SigTech',
+      title: 'Quantitative Investment Analyst Intern',
+      start: '2022',
+      end: '2023',
     },
     {
       company:
